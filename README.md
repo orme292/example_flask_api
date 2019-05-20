@@ -142,7 +142,7 @@ All endpoints will be prefaced with your IP address for now. So, if your IP addr
 
 Open Postman and create a new `POST` request to the following endpoint `/init`
 Select `body` > `raw` and change type to `JSON (application/json)`. Enter the following JSON to initialize the DB:
-```
+```json
 {
 	"name": "init db",
 	"location": "home",
@@ -150,7 +150,7 @@ Select `body` > `raw` and change type to `JSON (application/json)`. Enter the fo
 }
 ```
 Click SEND and you should get the following back:
-```
+```json
 {
     "dataset": {
         "created": "Day, DD MM YYYY HH:MM:SS TZD",
@@ -174,14 +174,14 @@ You can create new events at the `/events` endpoint, but you need to register a 
 To register an account, send a `POST` request to the following endpoint: `/auth/register`.
 Select `body` > `raw` and change type to `JSON (application/json)`.
 Enter the following JSON to initialize the DB:
-```
+```json
 {
 	"username": "<username>",
 	"email": "<email>"
 }
 ```
 Click SEND and you should get the following back:
-```
+```json
 {
     "dataset": {
         "created": "Day, DD MM YYYY HH:MM:SS TZD",
@@ -200,7 +200,7 @@ Click SEND and you should get the following back:
 ```
 
 Success! Take that token and add it to the `authorization` tab and change `type` to `Bearer Token` and paste your token in. Now you can create new events at the `/events/` endpoint by posting data like this:
-```
+```json
 {
 	"name": "test api",
 	"location": "home",
@@ -219,14 +219,14 @@ Delete event by ID
 
 Update events by ID
 `PATCH` `/events/<id>`
-```
+```json
 {
-  "description": "eat dinner",
+ 	"description": "eat dinner",
 	"location": "france"
 }
 ```
 or
-```
+```json
 {
   "name": "fight a bear"
 }
